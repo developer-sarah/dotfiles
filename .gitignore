@@ -1,6 +1,7 @@
 # block everything
 *   
 
+# allow these though
 !.gitignore
 !.config/
 !.config/nvim/
