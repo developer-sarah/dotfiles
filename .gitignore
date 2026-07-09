@@ -1,3 +1,7 @@
-/*
+# block everything
+*   
 
 !.gitignore
+!.config/
+!.config/nvim/
+!.config/nvim/**
