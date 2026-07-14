@@ -6,3 +6,4 @@ local function add_github(repo, spec, opts)
 end
 
 add_github("folke/flash.nvim") -- motions
+add_github("ibhagwan/fzf-lua") -- fuzzy finder
