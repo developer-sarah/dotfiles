@@ -5,5 +5,6 @@ local function add_github(repo, spec, opts)
   vim.pack.add({spec}, opts)
 end
 
-add_github("folke/flash.nvim") -- motions
-add_github("ibhagwan/fzf-lua") -- fuzzy finder
+add_github("EdenEast/nightfox.nvim") -- colorscheme
+add_github("folke/flash.nvim")       -- motions
+add_github("ibhagwan/fzf-lua")       -- fuzzy finder

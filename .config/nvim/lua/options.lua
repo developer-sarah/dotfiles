@@ -24,3 +24,5 @@ vim.o.listchars = "space:·,tab:» ,trail:~" -- how to show the whitespace
 
 vim.o.ignorecase = true                    -- search case insensitive
 vim.o.smartcase = true                     -- UNLESS there is capitalization
+
+vim.cmd[[colorscheme duskfox]]             -- set the colorscheme
