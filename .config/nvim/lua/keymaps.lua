@@ -13,6 +13,8 @@ vim.keymap.set("v", ">", ">gv")                -- indent and reselect
 vim.keymap.set("v", "<", "<gv")                -- dedent and reselect
 vim.keymap.set("x", "y", "myy`y")              -- don't move the cursor when yanking
 vim.keymap.set("x", "<space>", "<esc>")        -- escape visual mode with space
+require("my.auto_pairs").setup()
+require("my.enter_inside").setup()
 
 -- PLUGIN SPECIFIC --
 local flash = require("flash")
