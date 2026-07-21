@@ -1,24 +1,24 @@
 -- GENERAL --
 vim.g.mapleader = " "                          -- set what <leader> maps to
-vim.keymap.set("i", "jj", "<esc>")             -- type jj to leave insert mode
-vim.keymap.set("i", "<c-j>", "<down>")         -- move down in insert mode
-vim.keymap.set("i", "<c-k>", "<up>")           -- move up in insert mode
-vim.keymap.set("i", "<c-h>", "<left>")         -- move left in insert mode
-vim.keymap.set("i", "<c-l>", "<right>")        -- move right in insert mode
-vim.keymap.set("i", "<c-u>", "<cmd>u<cr>")     -- undo in insert mode
-vim.keymap.set("n", "<cr>", "o<esc>")          -- create line below in normal mode
-vim.keymap.set("n", "<s-cr>", "O<esc>")        -- create line above in normal mode
-vim.keymap.set({ "n", "v" }, "Y", "y$")        -- yank to end of line
-vim.keymap.set("v", ">", ">gv")                -- indent and reselect
-vim.keymap.set("v", "<", "<gv")                -- dedent and reselect
-vim.keymap.set("x", "y", "myy`y")              -- don't move the cursor when yanking
-vim.keymap.set("x", "<space>", "<esc>")        -- escape visual mode with space
+vim.keymap.set("i", "jj", "<esc>",             {desc = "type jj to leave insert mode"})
+vim.keymap.set("i", "<c-j>", "<down>",         {desc = "move down in insert mode"})
+vim.keymap.set("i", "<c-k>", "<up>",           {desc = "move up in insert mode"})
+vim.keymap.set("i", "<c-h>", "<left>",         {desc = "move left in insert mode"})
+vim.keymap.set("i", "<c-l>", "<right>",        {desc = "move right in insert mode"})
+vim.keymap.set("i", "<c-u>", "<cmd>u<cr>",     {desc = "undo in insert mode"})
+vim.keymap.set("n", "<cr>", "o<esc>",          {desc = "create line below in normal mode"})
+vim.keymap.set("n", "<s-cr>", "O<esc>",        {desc = "create line above in normal mode"})
+vim.keymap.set({ "n", "v" }, "Y", "y$",        {desc = "yank to end of line"})
+vim.keymap.set("v", ">", ">gv",                {desc = "indent and reselect"})
+vim.keymap.set("v", "<", "<gv",                {desc = "dedent and reselect"})
+vim.keymap.set("x", "y", "myy`y",              {desc = "don't move the cursor when yanking"})
+vim.keymap.set("x", "<space>", "<esc>",        {desc = "escape visual mode with space"})
 require("my.auto_pairs").setup()
 require("my.enter_inside").setup()
 
 -- PLUGIN SPECIFIC --
 local flash = require("flash")
-vim.keymap.set("n", "s", flash.jump)           -- jump around in files quickly
+vim.keymap.set("n", "s", flash.jump,           {desc = "jump around in files quickly"})
 
 local fzf = require("fzf-lua")
 local function help()
@@ -60,7 +60,7 @@ local function options()
     },
   })
 end
-vim.keymap.set("n", "<leader>sh", help)        -- search help
-vim.keymap.set("n", "<leader>sf", files)       -- search files
-vim.keymap.set("n", "<leader>so", options)     -- search options
-vim.keymap.set("n", "<leader>sb", fzf.buffers) -- search open buffers
+vim.keymap.set("n", "<leader>sh", help,        {desc = "search help"})
+vim.keymap.set("n", "<leader>sf", files,       {desc = "search files"})
+vim.keymap.set("n", "<leader>so", options,     {desc = "search options"})
+vim.keymap.set("n", "<leader>sb", fzf.buffers, {desc = "search open buffers"})

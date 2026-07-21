@@ -3,6 +3,7 @@
 
 # allow these though
 !.gitignore
+!.zshenv
 !.zshrc
 !.config/
 !.config/nvim/

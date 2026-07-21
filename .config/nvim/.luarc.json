@@ -1,0 +1,16 @@
+{
+  "runtime": {
+    "version": "LuaJIT",
+    "path": [
+      "lua/?.lua",
+      "lua/?/init.lua"
+    ]
+  },
+  "workspace": {
+    "library": [
+      "$VIMRUNTIME",
+      "$XDG_DATA_HOME/nvim/site/pack/core/opt/nvim-lspconfig/lua/lspconfig"
+    ],
+    "checkThirdParty": false
+  }
+}
