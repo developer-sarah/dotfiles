@@ -13,3 +13,6 @@ add_github("ibhagwan/fzf-lua")       -- fuzzy finder
 add_github("mason-org/mason.nvim")   -- easily install lsps, linters, etc
 add_github("neovim/nvim-lspconfig")  -- easily configure lsps
 require("plugins.config.lsps")
+
+add_github("Saghen/blink.cmp", {version = "v1"})
+require("plugins.config.completion")
