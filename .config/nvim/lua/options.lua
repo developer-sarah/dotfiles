@@ -13,10 +13,13 @@ vim.o.confirm = true                    -- ask to save instead of failing
 vim.o.laststatus = 0                    -- don't show the statusline
 vim.o.splitbelow = true                 -- open horizontal windows below
 vim.o.splitright = true                 -- open vertical windows to the right
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-vim.g.netrw_liststyle = 3
-vim.g.netrw_bufsettings = "noma nomod nowrap ro nobl nonu rnu"
+vim.g.netrw_banner = 0                  -- don't show the banner
+vim.g.netrw_winsize = 25                -- set the pane width (chars)
+vim.g.netrw_liststyle = 3               -- display contents as a tree
+local netrw_opts = ("noma nomod ro " ..
+                    "nowrap nobl " ..
+                    "nonu rnu")         -- add relative line numbers
+vim.g.netrw_bufsettings = netrw_opts
 
 local default_timeoutlen = 2000
 vim.o.timeoutlen = default_timeoutlen   -- have a very long timeout for the leader key

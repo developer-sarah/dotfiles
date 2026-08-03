@@ -41,6 +41,8 @@ local function help()
 end
 local function files()
   fzf.files({
+    -- make fd respect .gitignore even in non-git directories
+    fd_opts = "--color=never --type f --type l --exclude .git --no-require-git",
     winopts = {
       fullscreen = true,
       preview = {
@@ -48,6 +50,14 @@ local function files()
         vertical = "up:60%",
       },
     },
+  })
+end
+local function grep()
+  -- these git options tell rg to respect .gitignore even in non-git directories
+  local git_opts = "--ignore-file=.gitignore --no-ignore-messages "
+  local default = "--column -n --no-heading --color=always -S -M 4096 -e"
+  fzf.live_grep({
+    rg_opts = git_opts .. default,
   })
 end
 local function options()
@@ -63,5 +73,6 @@ local function options()
 end
 vim.keymap.set("n", "<leader>sh", help,         {desc = "search help"})
 vim.keymap.set("n", "<leader>sf", files,        {desc = "search files"})
-vim.keymap.set("n", "<leader>so", options,      {desc = "search options"})
-vim.keymap.set("n", "<leader>sb", fzf.buffers,  {desc = "search open buffers"})
+vim.keymap.set("n", "<leader>g", grep,          {desc = "live grep project"})
+vim.keymap.set("n", "<leader>svo", options,     {desc = "search vim options"})
+vim.keymap.set("n", "<leader>so", fzf.buffers,  {desc = "search open buffers"})
