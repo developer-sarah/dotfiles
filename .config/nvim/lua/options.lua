@@ -24,7 +24,7 @@ vim.g.netrw_bufsettings = netrw_opts
 local default_timeoutlen = 2000
 vim.o.timeoutlen = default_timeoutlen   -- have a very long timeout for the leader key
 require("my.insert_mode").timeoutlen(   -- but a very short timeout for jj in insert mode
-  200,
+  250,
   default_timeoutlen
 )
 

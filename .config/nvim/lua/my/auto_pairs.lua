@@ -2,15 +2,15 @@ local M = {}
 
 -- <C-g>u creates an undo block so that the pair insertion can easily be undone
 local inserts = {
-  ["("] = "(<C-g>u)<ESC>i",
-  ["{"] = "{<C-g>u}<ESC>i",
-  ["["] = "[<C-g>u]<ESC>i",
+  ["("] = "(<c-g>u)<esc>i<c-g>u",
+  ["{"] = "{<c-g>u}<esc>i<c-g>u",
+  ["["] = "[<c-g>u]<esc>i<c-g>u",
   [")"] = ")",
   ["}"] = "}",
   ["]"] = "]",
-  ['"'] = '"<C-g>u"<Esc>i',
-  ["'"] = "'<C-g>u'<Esc>i",
-  ["`"] = "`<C-g>u`<Esc>i",
+  ['"'] = '"',
+  ["'"] = "'",
+  ["`"] = "`",
 }
 
 local function is_alphanumeric(char)
@@ -22,7 +22,7 @@ local function skip_or_insert(char, insert_sequence)
   local col = vim.fn.col(".")
   local next_char = line_text:sub(col, col)
   if next_char == char then
-    return "<Right>"       -- skip over it
+    return "<right>"       -- skip over it
   elseif is_alphanumeric(next_char) then
     return char            -- just insert the char
   else

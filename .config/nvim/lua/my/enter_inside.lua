@@ -7,14 +7,14 @@ local function enter_inside()
   local after_cursor = line_text:sub(col)
 
   if (before_cursor:len() ~= 0) and (after_cursor:len() ~= 0) then
-    return "<CR><ESC>O"
+    return "<cr><esc>O"
   else
-    return "<CR>"
+    return "<cr>"
   end
 end
 
 function M.setup()
-  vim.keymap.set("i", "<CR>", enter_inside, { expr = true })
+  vim.keymap.set("i", "<s-cr>", enter_inside, { expr = true })
 end
 
 return M

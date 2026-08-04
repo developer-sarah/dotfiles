@@ -14,6 +14,13 @@ require("blink.cmp").setup({
     ["<enter>"] = { "accept", "fallback" },
     ["<esc>"] = { "cancel", "fallback" },
   },
+  cmdline = {
+    keymap = {
+      preset = "inherit",
+      ["<tab>"] = { "show", "select_next" },
+      ["<s-tab>"] = { "show", "select_prev" },
+    },
+  },
   fuzzy = {
     sorts = { "score", "exact", "sort_text", }
   },
