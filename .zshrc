@@ -10,9 +10,12 @@ alias makep="~/Library/Mobile\ Documents/com\~apple\~CloudDocs/makepatch.sh"
 alias applyp="~/Library/Mobile\ Documents/com\~apple\~CloudDocs/applypatch.sh"
 alias ls="eza"
 alias la="ls -la"
+alias tree="eza --tree"
 alias cd="z"
-alias editzshrc="vi ~/.zshrc"
-alias sourcezshrc="source ~/.zshrc"
+alias edz="nvim ~/.zshrc"
+alias soz="source ~/.zshrc"
+
+alias gs="git status"
 
 eval "$(starship init zsh)"
 export PATH=/Library/PostgreSQL/18/bin:$PATH
