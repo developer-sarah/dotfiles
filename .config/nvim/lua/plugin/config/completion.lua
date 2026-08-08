@@ -10,7 +10,6 @@ require("blink.cmp").setup({
       end,
       "fallback",
     },
-    ["<c-s>"] = { "show_signature", "hide_signature", "fallback" },
     ["<enter>"] = { "accept", "fallback" },
     ["<esc>"] = { "cancel", "fallback" },
   },
@@ -35,11 +34,5 @@ require("blink.cmp").setup({
       },
     },
     menu = { auto_show = false },
-  },
-  signature = {
-    enabled = true,
-    trigger = {
-      enabled = false,
-    },
   },
 })

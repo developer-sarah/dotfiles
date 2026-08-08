@@ -16,6 +16,7 @@ vim.keymap.set("x", "y", "myy`y",               {desc = "don't move the cursor w
 vim.keymap.set("x", "<space>", "<esc>",         {desc = "escape visual mode with space"})
 require("my.auto_pairs").setup()
 require("my.enter_inside").setup()
+require("my.float_toggles").setup()
 
 -- PLUGIN SPECIFIC --
 local flash = require("flash")
